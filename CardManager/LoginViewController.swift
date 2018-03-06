@@ -60,5 +60,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: testStr)
     }
+    
+    func verifyEmail(){
+        
+    }
 }
 
