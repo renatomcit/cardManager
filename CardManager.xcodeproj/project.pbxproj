@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4FA81157204ED4DC004DC259 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81156204ED4DC004DC259 /* RegisterView.swift */; };
+		4FA8115A204ED536004DC259 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */; };
+		4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8115B204ED65C004DC259 /* RegisterViewController.swift */; };
 		4FB833F3204DB82300BE165E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB833F2204DB82300BE165E /* LoginView.swift */; };
 		4FC392E3204DA6D40004A267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC392E2204DA6D40004A267 /* AppDelegate.swift */; };
 		4FC392E5204DA6D40004A267 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC392E4204DA6D40004A267 /* LoginViewController.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4FA81156204ED4DC004DC259 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
+		4FA8115B204ED65C004DC259 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4FB833F2204DB82300BE165E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4FC392DF204DA6D40004A267 /* CardManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC392E2204DA6D40004A267 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,9 +82,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FA81158204ED518004DC259 /* Extensions and Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */,
+			);
+			path = "Extensions and Protocols";
+			sourceTree = "<group>";
+		};
 		4FC392D6204DA6D40004A267 = {
 			isa = PBXGroup;
 			children = (
+				4FA81158204ED518004DC259 /* Extensions and Protocols */,
 				4FC392E1204DA6D40004A267 /* CardManager */,
 				4FC392F6204DA6D50004A267 /* CardManagerTests */,
 				4FC39301204DA6D50004A267 /* CardManagerUITests */,
@@ -106,6 +121,8 @@
 				4FC392E9204DA6D40004A267 /* Assets.xcassets */,
 				4FC392EB204DA6D40004A267 /* LaunchScreen.storyboard */,
 				4FC392EE204DA6D40004A267 /* Info.plist */,
+				4FA81156204ED4DC004DC259 /* RegisterView.swift */,
+				4FA8115B204ED65C004DC259 /* RegisterViewController.swift */,
 			);
 			path = CardManager;
 			sourceTree = "<group>";
@@ -263,6 +280,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FB833F3204DB82300BE165E /* LoginView.swift in Sources */,
+				4FA81157204ED4DC004DC259 /* RegisterView.swift in Sources */,
+				4FA8115A204ED536004DC259 /* UITextFieldExtensions.swift in Sources */,
+				4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */,
 				4FC392E5204DA6D40004A267 /* LoginViewController.swift in Sources */,
 				4FC392E3204DA6D40004A267 /* AppDelegate.swift in Sources */,
 			);
