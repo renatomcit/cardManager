@@ -9,13 +9,12 @@
 import Foundation
 import Alamofire
 
-class APIManager{
+class APILogin{
     func loginRequest (email: String, password: String) {
         let parameters: Parameters = [ "email": email, "password":  password ]
         Alamofire.request("http://cardmanagerserver.herokuapp.com/login", method: .post, parameters: parameters).responseJSON { (response) in
-            
+                let result = response
         }
-        
     }
 }
- 
+

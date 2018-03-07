@@ -21,6 +21,9 @@
 		4FC392ED204DA6D40004A267 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FC392EB204DA6D40004A267 /* LaunchScreen.storyboard */; };
 		4FC392F8204DA6D50004A267 /* CardManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC392F7204DA6D50004A267 /* CardManagerTests.swift */; };
 		4FC39303204DA6D50004A267 /* CardManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC39302204DA6D50004A267 /* CardManagerUITests.swift */; };
+		4FF85475205004D60092ACB6 /* Extract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF85474205004D60092ACB6 /* Extract.swift */; };
+		4FF85477205005860092ACB6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF85476205005860092ACB6 /* Card.swift */; };
+		4FF85479205006F40092ACB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF85478205006F40092ACB6 /* User.swift */; };
 		6BB9F52B3E09BB556E3BE0A4 /* Pods_CardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546D54AA6F869A0797422ED0 /* Pods_CardManager.framework */; };
 		A1C315DA2F10900F5029CAB8 /* Pods_CardManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9934870D2F4E868619F595 /* Pods_CardManagerTests.framework */; };
 		BD0F4BD2D0481E3AACA63B4F /* Pods_CardManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F12BEC2330F62AF9A18114C /* Pods_CardManagerUITests.framework */; };
@@ -64,6 +67,9 @@
 		4FC392FE204DA6D50004A267 /* CardManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FC39302204DA6D50004A267 /* CardManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardManagerUITests.swift; sourceTree = "<group>"; };
 		4FC39304204DA6D50004A267 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4FF85474205004D60092ACB6 /* Extract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extract.swift; sourceTree = "<group>"; };
+		4FF85476205005860092ACB6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4FF85478205006F40092ACB6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		546D54AA6F869A0797422ED0 /* Pods_CardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9934870D2F4E868619F595 /* Pods_CardManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A311F8700A749EE1867483 /* Pods-CardManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardManager/Pods-CardManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 		4FC392E1204DA6D40004A267 /* CardManager */ = {
 			isa = PBXGroup;
 			children = (
+				4FF854732050047A0092ACB6 /* Model */,
 				4FA81162204F0A2C004DC259 /* Manager */,
 				4FA81161204F0A0E004DC259 /* API */,
 				4FA81158204ED518004DC259 /* Extensions and Protocols */,
@@ -193,6 +200,16 @@
 				4FC39304204DA6D50004A267 /* Info.plist */,
 			);
 			path = CardManagerUITests;
+			sourceTree = "<group>";
+		};
+		4FF854732050047A0092ACB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4FF85474205004D60092ACB6 /* Extract.swift */,
+				4FF85476205005860092ACB6 /* Card.swift */,
+				4FF85478205006F40092ACB6 /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6E536D5CF265A955531988C1 /* Frameworks */ = {
@@ -518,8 +535,11 @@
 				4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */,
 				4FA81164204F0A87004DC259 /* LoginBusiness.swift in Sources */,
 				4FC392E5204DA6D40004A267 /* LoginViewController.swift in Sources */,
+				4FF85475205004D60092ACB6 /* Extract.swift in Sources */,
+				4FF85479205006F40092ACB6 /* User.swift in Sources */,
 				4FBC2AF6204F0C6D00C367A8 /* API.swift in Sources */,
 				4FC392E3204DA6D40004A267 /* AppDelegate.swift in Sources */,
+				4FF85477205005860092ACB6 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

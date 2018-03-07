@@ -9,7 +9,9 @@
 import UIKit
 
 class LoginManager: OperationQueue {
+    private var loginBusiness = LoginBusiness()
+    
     func login(email: String, password: String) {
-        
+        loginBusiness.loginManager(email: email, password: password)
     }
 }

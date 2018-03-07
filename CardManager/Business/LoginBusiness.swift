@@ -9,7 +9,8 @@
 import Foundation
 
 class LoginBusiness {
+    private var apiLogin = APILogin()
     func loginManager(email: String, password: String){
-        
+        apiLogin.loginRequest(email: email, password: password)
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    
+    var loginManager = LoginManager()
     
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var loginBackground: UIImageView!
@@ -21,13 +21,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (handler) in
             self.emailTextfield.becomeFirstResponder()
         }))
-        if let text = emailTextfield.text {
-            if !isValidEmail(testStr: text) {
+        if let email = emailTextfield.text,
+            let password = passwordTextField.text{
+            if !isValidEmail(testStr: email) {
                 self.present(alert, animated: true, completion: nil)
             }
             else {
                 loadingIndicator.isHidden = false
                 loadingIndicator.startAnimating()
+                loginManager.login(email: email, password: password)
             }
         }
     }

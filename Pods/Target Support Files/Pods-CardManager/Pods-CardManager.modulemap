@@ -1,0 +1,6 @@
+framework module Pods_CardManager {
+  umbrella header "Pods-CardManager-umbrella.h"
+
+  export *
+  module * { export * }
+}
