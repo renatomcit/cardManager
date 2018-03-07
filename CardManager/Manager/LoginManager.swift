@@ -11,7 +11,7 @@ import UIKit
 class LoginManager: OperationQueue {
     private var loginBusiness = LoginBusiness()
     
-    func login(email: String, password: String) {
-        loginBusiness.loginManager(email: email, password: password)
+    func login(email: String, password: String, callBack: @escaping(User)-> Void) {
+        loginBusiness.loginManager(email: email, password: password, callBack: {(user) in callBack(user)})
     }
 }

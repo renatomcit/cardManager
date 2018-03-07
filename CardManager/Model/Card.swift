@@ -13,9 +13,9 @@ struct Card: Codable {
     var imageFlag: String
     var imageCard: String
     var colorCard: String
-    var dueDate: Date
-    var limitAvailable: Double
-    var invoiceAmount: Double
+    var dueDate: String
+    var limitAvailable: String
+    var invoiceAmount: String
     var extract: [Extract]
     
     enum CodingKeys: String, CodingKey {
@@ -29,3 +29,4 @@ struct Card: Codable {
         case extract
     }
 }
+

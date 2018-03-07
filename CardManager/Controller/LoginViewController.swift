@@ -10,12 +10,24 @@ import UIKit
 import Foundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    
+    var user: User?
     var loginManager = LoginManager()
     
     @IBOutlet weak var emailTextfield: UITextField!
     @IBOutlet weak var loginBackground: UIImageView!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView! {
+        didSet{
+            loadingIndicator.hidesWhenStopped = true
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        emailTextfield.delegate = self
+        passwordTextField.delegate = self
+    }
+    
     @IBAction func botaoEntrar(_ sender: Any) {
         let alert: UIAlertController = UIAlertController(title: "Campos inválidos", message: "Verifique e tente novamente", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (handler) in
@@ -29,17 +41,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             else {
                 loadingIndicator.isHidden = false
                 loadingIndicator.startAnimating()
-                loginManager.login(email: email, password: password)
+                loginManager.login(email: email, password: password, callBack: {(user) in
+                    self.user = user
+                    self.loadingIndicator.stopAnimating()
+//                    let viewController = HomeViewController()
+                    let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+                    homeViewController.user = user
+                    self.present(homeViewController, animated: true, completion: nil)
+                })
             }
         }
-    }
-    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        emailTextfield.delegate = self
-        passwordTextField.delegate = self
-        loadingIndicator.isHidden = true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -52,10 +64,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         return newLength <= 6
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         

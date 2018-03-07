@@ -24,6 +24,9 @@
 		4FF85475205004D60092ACB6 /* Extract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF85474205004D60092ACB6 /* Extract.swift */; };
 		4FF85477205005860092ACB6 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF85476205005860092ACB6 /* Card.swift */; };
 		4FF85479205006F40092ACB6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF85478205006F40092ACB6 /* User.swift */; };
+		4FF8547B20501EC00092ACB6 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8547A20501EC00092ACB6 /* Response.swift */; };
+		4FF85481205033250092ACB6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF85480205033250092ACB6 /* HomeViewController.swift */; };
+		4FF854832050473D0092ACB6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF854822050473D0092ACB6 /* HomeView.swift */; };
 		6BB9F52B3E09BB556E3BE0A4 /* Pods_CardManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 546D54AA6F869A0797422ED0 /* Pods_CardManager.framework */; };
 		A1C315DA2F10900F5029CAB8 /* Pods_CardManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D9934870D2F4E868619F595 /* Pods_CardManagerTests.framework */; };
 		BD0F4BD2D0481E3AACA63B4F /* Pods_CardManagerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F12BEC2330F62AF9A18114C /* Pods_CardManagerUITests.framework */; };
@@ -70,6 +73,9 @@
 		4FF85474205004D60092ACB6 /* Extract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extract.swift; sourceTree = "<group>"; };
 		4FF85476205005860092ACB6 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4FF85478205006F40092ACB6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4FF8547A20501EC00092ACB6 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		4FF85480205033250092ACB6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4FF854822050473D0092ACB6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		546D54AA6F869A0797422ED0 /* Pods_CardManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D9934870D2F4E868619F595 /* Pods_CardManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CardManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83A311F8700A749EE1867483 /* Pods-CardManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CardManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CardManager/Pods-CardManager.debug.xcconfig"; sourceTree = "<group>"; };
@@ -166,20 +172,16 @@
 		4FC392E1204DA6D40004A267 /* CardManager */ = {
 			isa = PBXGroup;
 			children = (
+				4FC392EE204DA6D40004A267 /* Info.plist */,
+				4FF8547F205029CE0092ACB6 /* Storyboard */,
+				4FF8547E205029AC0092ACB6 /* SupportingFiles */,
+				4FF8547D205029900092ACB6 /* View */,
+				4FF8547C205029770092ACB6 /* Controller */,
 				4FF854732050047A0092ACB6 /* Model */,
 				4FA81162204F0A2C004DC259 /* Manager */,
 				4FA81161204F0A0E004DC259 /* API */,
 				4FA81158204ED518004DC259 /* Extensions and Protocols */,
 				4FA81160204F09E2004DC259 /* Business */,
-				4FC392E2204DA6D40004A267 /* AppDelegate.swift */,
-				4FC392E4204DA6D40004A267 /* LoginViewController.swift */,
-				4FB833F2204DB82300BE165E /* LoginView.swift */,
-				4FC392E6204DA6D40004A267 /* Main.storyboard */,
-				4FC392E9204DA6D40004A267 /* Assets.xcassets */,
-				4FC392EB204DA6D40004A267 /* LaunchScreen.storyboard */,
-				4FC392EE204DA6D40004A267 /* Info.plist */,
-				4FA81156204ED4DC004DC259 /* RegisterView.swift */,
-				4FA8115B204ED65C004DC259 /* RegisterViewController.swift */,
 			);
 			path = CardManager;
 			sourceTree = "<group>";
@@ -208,8 +210,47 @@
 				4FF85474205004D60092ACB6 /* Extract.swift */,
 				4FF85476205005860092ACB6 /* Card.swift */,
 				4FF85478205006F40092ACB6 /* User.swift */,
+				4FF8547A20501EC00092ACB6 /* Response.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4FF8547C205029770092ACB6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FC392E4204DA6D40004A267 /* LoginViewController.swift */,
+				4FA8115B204ED65C004DC259 /* RegisterViewController.swift */,
+				4FF85480205033250092ACB6 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4FF8547D205029900092ACB6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4FB833F2204DB82300BE165E /* LoginView.swift */,
+				4FA81156204ED4DC004DC259 /* RegisterView.swift */,
+				4FF854822050473D0092ACB6 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4FF8547E205029AC0092ACB6 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				4FC392E2204DA6D40004A267 /* AppDelegate.swift */,
+				4FC392E9204DA6D40004A267 /* Assets.xcassets */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		4FF8547F205029CE0092ACB6 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4FC392E6204DA6D40004A267 /* Main.storyboard */,
+				4FC392EB204DA6D40004A267 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		6E536D5CF265A955531988C1 /* Frameworks */ = {
@@ -531,9 +572,12 @@
 				4FB833F3204DB82300BE165E /* LoginView.swift in Sources */,
 				4FA81157204ED4DC004DC259 /* RegisterView.swift in Sources */,
 				4FA8115E204F0941004DC259 /* LoginManager.swift in Sources */,
+				4FF854832050473D0092ACB6 /* HomeView.swift in Sources */,
 				4FA8115A204ED536004DC259 /* UITextFieldExtensions.swift in Sources */,
 				4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */,
+				4FF85481205033250092ACB6 /* HomeViewController.swift in Sources */,
 				4FA81164204F0A87004DC259 /* LoginBusiness.swift in Sources */,
+				4FF8547B20501EC00092ACB6 /* Response.swift in Sources */,
 				4FC392E5204DA6D40004A267 /* LoginViewController.swift in Sources */,
 				4FF85475205004D60092ACB6 /* Extract.swift in Sources */,
 				4FF85479205006F40092ACB6 /* User.swift in Sources */,

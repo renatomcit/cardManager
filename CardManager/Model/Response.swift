@@ -1,5 +1,5 @@
 //
-//  Extract.swift
+//  Response.swift
 //  CardManager
 //
 //  Created by cit on 07/03/18.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct Extract: Codable{
-    var date: String
-    var spent: String
-    var value: String
+struct Response: Codable {
+    var user: UserParse
+    var cards: [Card]
 }

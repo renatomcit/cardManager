@@ -17,6 +17,10 @@ class RegisterView: UIView {
     
     @IBOutlet weak var cartaoTextField: UITextField!
     
+    @IBAction func botaoSolicitarCadastro(_ sender: Any) {
+        //Verificar se dados foram preenchidos corretamente;
+        //Request
+    }
     override func awakeFromNib() {
         //        nameTextField.underline(UIColor.Colors.greyishBrown)
         //        emailTextField.underline(UIColor.Colors.greyishBrown)

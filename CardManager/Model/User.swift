@@ -8,14 +8,20 @@
 
 import Foundation
 
-struct User: Codable {
+struct UserParse: Codable {
     var name: String
     var imageProfile: String
-    var cards: [Card]
+//    var cards: [Card]
     
     enum CodingKeys: String, CodingKey {
         case name
         case imageProfile = "image_profile"
-        case cards
+//        case cards
     }
+}
+
+struct User {
+    var name: String
+    var imageProfile: String
+    var cards: [Card]
 }
