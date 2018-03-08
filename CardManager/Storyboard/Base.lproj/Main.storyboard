@@ -24,16 +24,17 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-MAIL" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q0f-kX-cdR">
                                 <rect key="frame" x="24" y="326" width="327" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" hint="ce ta errado tio" label="Digite seu e-mail"/>
                                 <color key="textColor" red="0.97756796509999999" green="1" blue="0.95349819120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="continue" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="SENHA" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qw1-EB-ora">
                                 <rect key="frame" x="24" y="376" width="327" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.97756796509999999" green="1" blue="0.95349819120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7c-bC-Btx">
                                 <rect key="frame" x="24" y="446" width="327" height="30"/>
@@ -278,14 +279,14 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Or-EN-V4m">
                                 <rect key="frame" x="24" y="275" width="327" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSU-KH-hbF">
                                 <rect key="frame" x="24" y="339" width="327" height="30"/>
@@ -304,7 +305,7 @@
                                     <color key="titleShadowColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="botaoSolicitarCadastro:" destination="eVd-cx-53e" eventType="touchUpInside" id="MgE-aa-No7"/>
+                                    <action selector="requestRegistration:" destination="Ko7-1X-HFm" eventType="touchUpInside" id="lgk-pX-Ddb"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Uncheck" translatesAutoresizingMaskIntoConstraints="NO" id="FTV-fr-KvG">
@@ -350,11 +351,17 @@
                         <viewLayoutGuide key="safeArea" id="Pb6-oT-RaY"/>
                         <connections>
                             <outlet property="cartaoTextField" destination="5Or-EN-V4m" id="szD-hB-y82"/>
-                            <outlet property="celularTextField" destination="gns-Ib-HbI" id="rQL-YJ-EOl"/>
+                            <outlet property="cellTextField" destination="gns-Ib-HbI" id="R1k-Tv-HJn"/>
                             <outlet property="emailTextField" destination="AvP-Le-rL7" id="hfW-Ja-YHA"/>
                             <outlet property="nameTextField" destination="eKO-Hs-9Ue" id="06b-gy-cbc"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="cardTextField" destination="5Or-EN-V4m" id="QDW-dD-ymG"/>
+                        <outlet property="cellTextField" destination="gns-Ib-HbI" id="MTT-IV-MaU"/>
+                        <outlet property="emailTextField" destination="AvP-Le-rL7" id="mtR-hv-WR1"/>
+                        <outlet property="nameTextField" destination="eKO-Hs-9Ue" id="gtq-yc-NSH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDx-W1-k7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

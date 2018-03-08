@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class APILogin{
+class API{
     func loginRequest (email: String, password: String, callBack: @escaping(User)-> Void) {
         
         let parameters: Parameters = [ "email": email, "password":  password ]
@@ -22,5 +22,16 @@ class APILogin{
             }
         }
     }
+    
+    func registerRequest(name: String, email: String, cell: String, cardNumber: String, callBack: @escaping(Bool)-> Void){
+        let parameters: Parameters = [ "name": name, "email":  email, "phone_number": cell, "card_number": cardNumber ]
+        Alamofire.request("http://cardmanagerserver.herokuapp.com/signup", method: .post, parameters: parameters, encoding: JSONEncoding.default).responseJSON
+            { (response) in
+                let result = response.result.value as! Dictionary<String,String>
+                callBack(result["result"] == "success")
+            }
+        
+    }
 }
+
 

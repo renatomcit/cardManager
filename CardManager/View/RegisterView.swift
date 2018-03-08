@@ -13,14 +13,10 @@ class RegisterView: UIView {
     
     @IBOutlet weak var emailTextField: UITextField!
     
-    @IBOutlet weak var celularTextField: UITextField!
+    @IBOutlet weak var cellTextField: UITextField!
     
     @IBOutlet weak var cartaoTextField: UITextField!
     
-    @IBAction func botaoSolicitarCadastro(_ sender: Any) {
-        //Verificar se dados foram preenchidos corretamente;
-        //Request
-    }
     override func awakeFromNib() {
         //        nameTextField.underline(UIColor.Colors.greyishBrown)
         //        emailTextField.underline(UIColor.Colors.greyishBrown)
@@ -28,13 +24,14 @@ class RegisterView: UIView {
         //        cartaoTextField.underline(UIColor.Colors.greyishBrown)
         nameTextField.setBottomBorder(UIColor.Colors.greyishBrown)
         emailTextField.setBottomBorder(UIColor.Colors.greyishBrown)
-        celularTextField.setBottomBorder(UIColor.Colors.greyishBrown)
+        cellTextField.setBottomBorder(UIColor.Colors.greyishBrown)
         cartaoTextField.setBottomBorder(UIColor.Colors.greyishBrown)
         nameTextField.changePlaceHolderColor(forText: "NOME", withColor: UIColor.black)
         emailTextField.changePlaceHolderColor(forText: "E-MAIL", withColor: UIColor.black)
-        celularTextField.changePlaceHolderColor(forText: "NÚMERO DO TELEFONE", withColor: UIColor.black)
+        cellTextField.changePlaceHolderColor(forText: "NÚMERO DO TELEFONE", withColor: UIColor.black)
         cartaoTextField.changePlaceHolderColor(forText: "NÚMERO DO CARTÃO", withColor: UIColor.black)
         
     }
+    
     
 }

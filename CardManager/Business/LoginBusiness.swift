@@ -9,7 +9,7 @@
 import Foundation
 
 class LoginBusiness {
-    private var apiLogin = APILogin()
+    private var apiLogin = API()
     func loginManager(email: String, password: String, callBack: @escaping(User)-> Void){
 
         apiLogin.loginRequest(email: email, password: password, callBack: {(user) in

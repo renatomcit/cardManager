@@ -12,6 +12,8 @@
 		4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8115B204ED65C004DC259 /* RegisterViewController.swift */; };
 		4FA8115E204F0941004DC259 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8115D204F0941004DC259 /* LoginManager.swift */; };
 		4FA81164204F0A87004DC259 /* LoginBusiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81163204F0A87004DC259 /* LoginBusiness.swift */; };
+		4FB45C5820516F390035760B /* RegisterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB45C5720516F390035760B /* RegisterManager.swift */; };
+		4FB45C5A205171110035760B /* RegisterBussiness.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB45C59205171110035760B /* RegisterBussiness.swift */; };
 		4FB833F3204DB82300BE165E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB833F2204DB82300BE165E /* LoginView.swift */; };
 		4FBC2AF6204F0C6D00C367A8 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC2AF5204F0C6D00C367A8 /* API.swift */; };
 		4FC392E3204DA6D40004A267 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC392E2204DA6D40004A267 /* AppDelegate.swift */; };
@@ -55,6 +57,8 @@
 		4FA8115B204ED65C004DC259 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		4FA8115D204F0941004DC259 /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		4FA81163204F0A87004DC259 /* LoginBusiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBusiness.swift; sourceTree = "<group>"; };
+		4FB45C5720516F390035760B /* RegisterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterManager.swift; sourceTree = "<group>"; };
+		4FB45C59205171110035760B /* RegisterBussiness.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterBussiness.swift; sourceTree = "<group>"; };
 		4FB833F2204DB82300BE165E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4FBC2AF5204F0C6D00C367A8 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		4FC392DF204DA6D40004A267 /* CardManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				4FA81163204F0A87004DC259 /* LoginBusiness.swift */,
+				4FB45C59205171110035760B /* RegisterBussiness.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				4FA8115D204F0941004DC259 /* LoginManager.swift */,
+				4FB45C5720516F390035760B /* RegisterManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -569,6 +575,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FB45C5820516F390035760B /* RegisterManager.swift in Sources */,
 				4FB833F3204DB82300BE165E /* LoginView.swift in Sources */,
 				4FA81157204ED4DC004DC259 /* RegisterView.swift in Sources */,
 				4FA8115E204F0941004DC259 /* LoginManager.swift in Sources */,
@@ -576,6 +583,7 @@
 				4FA8115A204ED536004DC259 /* UITextFieldExtensions.swift in Sources */,
 				4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */,
 				4FF85481205033250092ACB6 /* HomeViewController.swift in Sources */,
+				4FB45C5A205171110035760B /* RegisterBussiness.swift in Sources */,
 				4FA81164204F0A87004DC259 /* LoginBusiness.swift in Sources */,
 				4FF8547B20501EC00092ACB6 /* Response.swift in Sources */,
 				4FC392E5204DA6D40004A267 /* LoginViewController.swift in Sources */,
@@ -749,12 +757,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 83A311F8700A749EE1867483 /* Pods-CardManager.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6S865S3JJ;
 				INFOPLIST_FILE = CardManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ARS.CardManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -764,12 +775,15 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B682717B20073976015CE7E3 /* Pods-CardManager.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6S865S3JJ;
 				INFOPLIST_FILE = CardManager/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ARS.CardManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

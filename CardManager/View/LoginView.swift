@@ -20,6 +20,7 @@ class LoginView: UIView {
 //        passwordTextField.underline(UIColor.Colors.white)
         emailTextField.setBottomBorder(UIColor.Colors.white)
         passwordTextField.setBottomBorder(UIColor.Colors.white)
+        passwordTextField.accessibilityLabel = "Achou que não ia ter acessibilidade? Achou errado otário!"
         
     }
     

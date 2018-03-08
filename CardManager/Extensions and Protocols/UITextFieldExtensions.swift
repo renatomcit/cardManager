@@ -49,7 +49,7 @@ extension UIColor {
         let resultColor: UIColor
         switch color {
         case .greyishBrown:
-            resultColor = UIColor(displayP3Red: 74/255, green: 74/255, blue: 74/255, alpha: CGFloat(1.0))
+            resultColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: CGFloat(1.0))
         case .white:
             resultColor = UIColor.white
         default:
