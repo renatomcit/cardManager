@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import Alamofire
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     var user: User?
@@ -38,7 +39,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if !isValidEmail(testStr: email) {
                 self.present(alert, animated: true, completion: nil)
             }
-            else {
+            else if !NetworkReachabilityManager()!.isReachable {
+                alert.title = "Não há conexão com a internet"
+                alert.message = "Por favor tente mais tarde."
+                self.present(alert, animated: true, completion: nil)
+            } else {
                 loadingIndicator.isHidden = false
                 loadingIndicator.startAnimating()
                 loginManager.login(email: email, password: password, callBack: {(user) in
@@ -64,7 +69,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         return newLength <= 6
     }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
+    
     func isValidEmail(testStr:String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
@@ -72,8 +81,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return emailTest.evaluate(with: testStr)
     }
     
-    func verifyEmail(){
-        
-    }
 }
 

@@ -7,6 +7,7 @@ target 'CardManager' do
 
   # Pods for CardManager
     pod 'Alamofire'
+    pod 'CardIO'
 
   target 'CardManagerTests' do
     inherit! :search_paths

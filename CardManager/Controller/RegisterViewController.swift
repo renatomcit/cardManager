@@ -15,18 +15,34 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cardTextField: UITextField!
     var manager = RegisterManager()
     @IBAction func requestRegistration(_ sender: Any) {
-        let alert: UIAlertController = UIAlertController(title: "Campos inválidos", message: "Verifique e tente novamente", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (handler) in
+        let alert1: UIAlertController = UIAlertController(title: "Campos inválidos", message: "Verifique e tente novamente", preferredStyle: UIAlertControllerStyle.alert)
+        alert1.addAction(UIAlertAction(title: "OK", style: .default, handler: { (handler) in
             self.nameTextField.becomeFirstResponder()
         }))
+        let alert2: UIAlertController = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
         if let name = nameTextField.text,
             let email = emailTextField.text,
             let cell = cellTextField.text,
             let card = cardTextField.text  {
             
             manager.register(name: name, email: email, cell: cell, card: card, callBack: { (result) in
-                alert.title = (result ? "Registro feito com sucesso." : "Fudeu.")
-                self.present(alert, animated: true, completion: nil)
+                if result {
+                    alert2.title = "Registro feito com sucesso."
+                    alert2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (handler) in
+//                        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+//                        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//                        self.present(loginViewController, animated: true, completion: nil)
+                        self.dismiss(animated: true, completion: {})
+                    }))
+                    self.present(alert2, animated: true, completion: nil)
+                } else {
+                    alert2.title = "Erro."
+                    alert2.addAction(UIAlertAction(title: "OK", style: .default, handler: {(handler) in
+                        self.nameTextField.becomeFirstResponder()
+                    }))
+                    self.present(alert2, animated: true, completion: nil)
+                }
+                
             })
         }
     }
