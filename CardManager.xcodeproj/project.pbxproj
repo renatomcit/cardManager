@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37D07AC9205FF9BC001416F5 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07AC8205FF9BC001416F5 /* StringExtensions.swift */; };
 		4FA81157204ED4DC004DC259 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81156204ED4DC004DC259 /* RegisterView.swift */; };
 		4FA8115A204ED536004DC259 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */; };
 		4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8115B204ED65C004DC259 /* RegisterViewController.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37D07AC8205FF9BC001416F5 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		4FA81156204ED4DC004DC259 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		4FA8115B204ED65C004DC259 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */,
+				37D07AC8205FF9BC001416F5 /* StringExtensions.swift */,
 			);
 			path = "Extensions and Protocols";
 			sourceTree = "<group>";
@@ -587,6 +590,7 @@
 				4FA81164204F0A87004DC259 /* LoginBusiness.swift in Sources */,
 				4FF8547B20501EC00092ACB6 /* Response.swift in Sources */,
 				4FC392E5204DA6D40004A267 /* LoginViewController.swift in Sources */,
+				37D07AC9205FF9BC001416F5 /* StringExtensions.swift in Sources */,
 				4FF85475205004D60092ACB6 /* Extract.swift in Sources */,
 				4FF85479205006F40092ACB6 /* User.swift in Sources */,
 				4FBC2AF6204F0C6D00C367A8 /* API.swift in Sources */,

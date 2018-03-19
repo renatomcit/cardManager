@@ -29,7 +29,7 @@ class HomeView: UIView {
         case "purple":
             imagesCard.image = UIImage.init(named: "roxo")
         default:
-            break
+            imagesCard.image = UIImage.init(named: "vermelho")
         }
         
     }

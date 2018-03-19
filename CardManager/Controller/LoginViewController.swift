@@ -27,6 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailTextfield.delegate = self
         passwordTextField.delegate = self
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     @IBAction func botaoEntrar(_ sender: Any) {
@@ -36,7 +37,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }))
         if let email = emailTextfield.text,
             let password = passwordTextField.text{
-            if !isValidEmail(testStr: email) {
+            if !email.isValidEmail() {
                 self.present(alert, animated: true, completion: nil)
             }
             else if !NetworkReachabilityManager()!.isReachable {
@@ -49,7 +50,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 loginManager.login(email: email, password: password, callBack: {(user) in
                     self.user = user
                     self.loadingIndicator.stopAnimating()
-//                    let viewController = HomeViewController()
                     let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
                     homeViewController.user = user
@@ -68,10 +68,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         return newLength <= 6
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
     }
     
     func isValidEmail(testStr:String) -> Bool {
