@@ -43,7 +43,7 @@ class RegisterBusiness {
         case defaults = ""
     }
     
-    func registerBusiness(name: String, email: String, cell: String, card: String,  callBack: @escaping(Bool)-> Void) -> ValidationResults {
+    func validateFields ( name: String, email: String, cell: String, card: String ) -> ValidationResults {
         let removal: [Character] = ["(", ")", "-", " "]
         let filteredCell = cell.filter { !removal.contains($0) }
         var result: ValidationResults
@@ -54,17 +54,17 @@ class RegisterBusiness {
             } else {
                 result = (Validation.nameInvalid, ValidationMessage.nameInvalid)
             }
-        } else if !validateCell(cell) {
-            if cell.isEmpty {
-                result = (Validation.cellEmpty, ValidationMessage.cellEmpty)
-            } else {
-                result = (Validation.cellInvalid, ValidationMessage.cellInvalid)
-            }
         } else if !email.isValidEmail() {
             if email.isEmpty {
                 result = (Validation.emailEmpty, ValidationMessage.emailEmpty)
             } else {
                 result = (Validation.emailInvalid, ValidationMessage.emailInvalid)
+            }
+        } else if !validateCell(filteredCell) {
+            if cell.isEmpty {
+                result = (Validation.cellEmpty, ValidationMessage.cellEmpty)
+            } else {
+                result = (Validation.cellInvalid, ValidationMessage.cellInvalid)
             }
         } else if !validateCard(card) {
             if card.isEmpty {
@@ -74,17 +74,20 @@ class RegisterBusiness {
             }
         } else {
             result = (Validation.valid, ValidationMessage.valid)
-            apiRegister.registerRequest(name: name, email: email, cell: filteredCell, cardNumber: card,  callBack: {(user) in
-                callBack(user)
-            })
         }
         return result
+    }
+    
+    func registerBusiness (  name: String, email: String, cell: String, card: String, callBack: @escaping(Bool)-> Void ) {
+        apiRegister.registerRequest(name: name, email: email, cell: cell, cardNumber: card,  callBack: {(user) in
+            callBack(user)
+        })
     }
     
     func validateName ( _ name: String ) -> Bool{
         var result: Bool = false
         let names = name.split(separator: " ")
-        if name.count >= 7 && names[0].count > 3 && names[1].count > 3 {
+        if name.count >= 7 && names[0].count >= 3 && names[1].count >= 3 {
             result = true
         }
         return result
@@ -96,7 +99,7 @@ class RegisterBusiness {
     }
     
     func validateCard (_ card: String ) -> Bool {
-        return card.isEmpty
+        return !card.isEmpty
     }
     
 }

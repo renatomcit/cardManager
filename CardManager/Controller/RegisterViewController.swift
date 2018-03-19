@@ -15,78 +15,104 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cardTextField: UITextField!
     @IBOutlet weak var registerLoading: UIActivityIndicatorView!
     var manager = RegisterManager()
+    
+    enum Field {
+        case name
+        case email
+        case cell
+        case card
+        case defaults
+    }
     @IBAction func requestRegistration(_ sender: Any) {
-        registerLoading.startAnimating()
+        var field: Field = .defaults
+        var validationResult: RegisterBusiness.Validation
         let alert1: UIAlertController = UIAlertController(title: "Campos inválidos", message: "Verifique e tente novamente", preferredStyle: UIAlertControllerStyle.alert)
         alert1.addAction(UIAlertAction(title: "OK", style: .default, handler: { (handler) in
-            self.nameTextField.becomeFirstResponder()
+            switch (field) {
+            case .name:
+                self.nameTextField.becomeFirstResponder()
+            case .email:
+                self.emailTextField.becomeFirstResponder()
+            case .cell:
+                self.cellTextField.becomeFirstResponder()
+            case .card:
+                self.cardTextField.becomeFirstResponder()
+            case .defaults:
+                return
+            }
         }))
         let alert2: UIAlertController = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        registerLoading.startAnimating()
         if let name = nameTextField.text,
             let email = emailTextField.text,
             let cell = cellTextField.text,
             let card = cardTextField.text  {
+            validationResult = manager.registerBusiness.validateFields(name: name, email: email, cell: cell, card: card).0
+            if validationResult == RegisterBusiness.Validation.valid {
+                manager.register(name: name, email: email, cell: cell, card: card, callBack: { (result) in
+                    if result {
+                        alert2.title = "Registro feito com sucesso."
+                        alert2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (handler) in
+                            self.navigationController?.isNavigationBarHidden = true
+                            self.navigationController?.popViewController(animated: true)
+                            self.registerLoading.stopAnimating()
+                        }))
+                        self.present(alert2, animated: true, completion: nil)
+                    } else {
+                        alert2.title = "Erro."
+                        alert2.addAction(UIAlertAction(title: "OK", style: .default, handler: {(handler) in
+                            self.nameTextField.becomeFirstResponder()
+                            self.registerLoading.stopAnimating()
+                        }))
+                        self.present(alert2, animated: true, completion: nil)
+                    }
+                    
+                })
+            } else if validationResult == RegisterBusiness.Validation.nameEmpty {
+                alert1.title = "Nome vazio."
+                alert1.message = manager.registerBusiness.result.1.rawValue
+                field = .name
+                self.present(alert1, animated: true)
+            } else if validationResult == RegisterBusiness.Validation.nameInvalid {
+                alert1.title = "Nome inválido."
+                alert1.message = manager.registerBusiness.result.1.rawValue
+                field = .name
+                self.present(alert1, animated: true)
+            } else if validationResult == RegisterBusiness.Validation.emailInvalid {
+                alert1.title = "Email inválido."
+                alert1.message = manager.registerBusiness.result.1.rawValue
+                field = .email
+                self.present(alert1, animated: true)
+            } else if validationResult == RegisterBusiness.Validation.emailEmpty {
+                alert1.title = "Email vazio."
+                alert1.message = manager.registerBusiness.result.1.rawValue
+                field = .email
+                self.present(alert1, animated: true)
+            } else if validationResult == RegisterBusiness.Validation.cellEmpty {
+                alert1.title = "Número de celular vazio."
+                alert1.message = manager.registerBusiness.result.1.rawValue
+                field = .cell
+                self.present(alert1, animated: true)
+            } else if validationResult == RegisterBusiness.Validation.cellInvalid {
+                alert1.title = "Número de celular inválido."
+                alert1.message = manager.registerBusiness.result.1.rawValue
+                field = .cell
+                self.present(alert1, animated: true)
+            } else if validationResult == RegisterBusiness.Validation.cardEmpty {
+                alert1.title = "Número do cartão vazio."
+                alert1.message = manager.registerBusiness.result.1.rawValue
+                field = .card
+                self.present(alert1, animated: true)
+            } else if validationResult == RegisterBusiness.Validation.cardInvalid {
+                alert1.title = "Número do cartão inválido."
+                alert1.message = manager.registerBusiness.result.1.rawValue
+                field = .card
+                self.present(alert1, animated: true)
+            } else {
+                field = .defaults
+            }
+            registerLoading.stopAnimating()
             
-            manager.registerBusiness.result = manager.register(name: name, email: email, cell: cell, card: card, callBack: { (result) in
-                if result {
-                    alert2.title = "Registro feito com sucesso."
-                    alert2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (handler) in
-                        self.navigationController?.isNavigationBarHidden = true
-                        self.navigationController?.popViewController(animated: true)
-                        self.registerLoading.stopAnimating()
-                    }))
-                    self.present(alert2, animated: true, completion: nil)
-                } else {
-                    alert2.title = "Erro."
-                    alert2.addAction(UIAlertAction(title: "OK", style: .default, handler: {(handler) in
-                        self.nameTextField.becomeFirstResponder()
-                        self.registerLoading.stopAnimating()
-                    }))
-                    self.present(alert2, animated: true, completion: nil)
-                }
-                
-            })
-        }
-        if manager.registerBusiness.result.0 == RegisterBusiness.Validation.nameEmpty {
-            alert1.title = "Nome vazio."
-            alert1.message = manager.registerBusiness.result.1.rawValue
-            self.present(alert2, animated: true, completion: nil)
-            self.nameTextField.becomeFirstResponder()
-        } else if manager.registerBusiness.result.0 == RegisterBusiness.Validation.nameInvalid {
-            alert1.title = "Nome inválido."
-            alert1.message = manager.registerBusiness.result.1.rawValue
-            self.present(alert2, animated: true, completion: nil)
-            self.nameTextField.becomeFirstResponder()
-        } else if manager.registerBusiness.result.0 == RegisterBusiness.Validation.emailInvalid {
-            alert1.title = "Email inválido."
-            alert1.message = manager.registerBusiness.result.1.rawValue
-            self.present(alert2, animated: true, completion: nil)
-            self.emailTextField.becomeFirstResponder()
-        } else if manager.registerBusiness.result.0 == RegisterBusiness.Validation.emailEmpty {
-            alert1.title = "Email vazio."
-            alert1.message = manager.registerBusiness.result.1.rawValue
-            self.present(alert2, animated: true, completion: nil)
-            self.emailTextField.becomeFirstResponder()
-        } else if manager.registerBusiness.result.0 == RegisterBusiness.Validation.cellEmpty {
-            alert1.title = "Número de celular vazio."
-            alert1.message = manager.registerBusiness.result.1.rawValue
-            self.present(alert2, animated: true, completion: nil)
-            self.cellTextField.becomeFirstResponder()
-        } else if manager.registerBusiness.result.0 == RegisterBusiness.Validation.cellInvalid {
-            alert1.title = "Número de celular inválido."
-            alert1.message = manager.registerBusiness.result.1.rawValue
-            self.present(alert2, animated: true, completion: nil)
-            self.cellTextField.becomeFirstResponder()
-        } else if manager.registerBusiness.result.0 == RegisterBusiness.Validation.cardEmpty {
-            alert1.title = "Número do cartão vazio."
-            alert1.message = manager.registerBusiness.result.1.rawValue
-            self.present(alert2, animated: true, completion: nil)
-            self.cellTextField.becomeFirstResponder()
-        } else if manager.registerBusiness.result.0 == RegisterBusiness.Validation.cardInvalid {
-            alert1.title = "Número do cartão inválido."
-            alert1.message = manager.registerBusiness.result.1.rawValue
-            self.present(alert2, animated: true, completion: nil)
-            self.cellTextField.becomeFirstResponder()
         }
     }
     

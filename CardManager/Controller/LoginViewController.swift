@@ -27,6 +27,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailTextfield.delegate = self
         passwordTextField.delegate = self
+        loadingIndicator.hidesWhenStopped = true
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -44,8 +45,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 alert.title = "Não há conexão com a internet"
                 alert.message = "Por favor tente mais tarde."
                 self.present(alert, animated: true, completion: nil)
-            } else {
-                loadingIndicator.isHidden = false
+            } else {                loadingIndicator.isHidden = false
                 loadingIndicator.startAnimating()
                 loginManager.login(email: email, password: password, callBack: {(user) in
                     self.user = user
