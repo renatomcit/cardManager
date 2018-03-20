@@ -1,12 +1,18 @@
 PODS:
   - Alamofire (4.6.0)
+  - CardIO (5.4.1)
+  - SideMenu (3.1.5)
 
 DEPENDENCIES:
   - Alamofire
+  - CardIO
+  - SideMenu
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
+  SideMenu: 47dbf9e4d878062d8994aed43f6e4bf6c1fea30b
 
-PODFILE CHECKSUM: 8d547a7be044e068ee5a7f0f5745ef7d4153ffc5
+PODFILE CHECKSUM: af1b08a01450b00d074b301c5e6d0f1e5d5701df
 
 COCOAPODS: 1.4.0

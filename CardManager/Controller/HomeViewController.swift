@@ -18,9 +18,6 @@ class HomeViewController: UIViewController {
         if let safeUser = user{
             homeView.setup( user: safeUser, cardNumber: 0 )
         }
-        let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(loginViewController, animated: true, completion: nil)
     }
     
     func cardDefault () -> Int {

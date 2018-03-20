@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		37D07AC9205FF9BC001416F5 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07AC8205FF9BC001416F5 /* StringExtensions.swift */; };
+		37D07ACD20613372001416F5 /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07ACC20613372001416F5 /* UISideMenuNavigationController.swift */; };
 		4FA81157204ED4DC004DC259 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81156204ED4DC004DC259 /* RegisterView.swift */; };
 		4FA8115A204ED536004DC259 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */; };
 		4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8115B204ED65C004DC259 /* RegisterViewController.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		37D07AC8205FF9BC001416F5 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		37D07ACC20613372001416F5 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISideMenuNavigationController.swift; sourceTree = "<group>"; };
 		4FA81156204ED4DC004DC259 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		4FA8115B204ED65C004DC259 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				4FC392E4204DA6D40004A267 /* LoginViewController.swift */,
 				4FA8115B204ED65C004DC259 /* RegisterViewController.swift */,
 				4FF85480205033250092ACB6 /* HomeViewController.swift */,
+				37D07ACC20613372001416F5 /* UISideMenuNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -498,10 +501,12 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CardManager/Pods-CardManager-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -584,6 +589,7 @@
 				4FA8115E204F0941004DC259 /* LoginManager.swift in Sources */,
 				4FF854832050473D0092ACB6 /* HomeView.swift in Sources */,
 				4FA8115A204ED536004DC259 /* UITextFieldExtensions.swift in Sources */,
+				37D07ACD20613372001416F5 /* UISideMenuNavigationController.swift in Sources */,
 				4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */,
 				4FF85481205033250092ACB6 /* HomeViewController.swift in Sources */,
 				4FB45C5A205171110035760B /* RegisterBussiness.swift in Sources */,

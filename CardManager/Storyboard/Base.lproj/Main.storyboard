@@ -99,23 +99,22 @@
             </objects>
             <point key="canvasLocation" x="1127" y="-495"/>
         </scene>
-        <!--Item-->
+        <!--Home View Controller-->
         <scene sceneID="nh8-hx-sVG">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-Ig-OIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomeViewController" id="fmc-X8-30b" customClass="HomeViewController" customModule="CardManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fqb-sK-MBh" customClass="HomeView" customModule="CardManager" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j5O-sR-uKg">
-                                <rect key="frame" x="24" y="109" width="326" height="208"/>
+                                <rect key="frame" x="24" y="153" width="326" height="208"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="208" id="knG-EA-jvM"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2d-RS-UDn">
-                                <rect key="frame" x="24" y="341" width="327" height="64"/>
+                                <rect key="frame" x="24" y="385" width="327" height="64"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:CqV-rN-D7g:image" translatesAutoresizingMaskIntoConstraints="NO" id="CqV-rN-D7g">
                                         <rect key="frame" x="20" y="18" width="28" height="28"/>
@@ -151,7 +150,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kg9-4n-HkV">
-                                <rect key="frame" x="24" y="413" width="327" height="64"/>
+                                <rect key="frame" x="24" y="457" width="327" height="64"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:5uu-xU-VLI:image" translatesAutoresizingMaskIntoConstraints="NO" id="5uu-xU-VLI">
                                         <rect key="frame" x="20" y="18" width="28" height="28"/>
@@ -187,7 +186,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGE-dg-9Oo">
-                                <rect key="frame" x="24" y="485" width="327" height="64"/>
+                                <rect key="frame" x="24" y="529" width="327" height="64"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:4r6-yc-36t:image" translatesAutoresizingMaskIntoConstraints="NO" id="4r6-yc-36t">
                                         <rect key="frame" x="20" y="18" width="28" height="28"/>
@@ -246,30 +245,16 @@
                             <outlet property="limitAvailable" destination="3om-Qe-hsT" id="SdH-ek-GRd"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="a5D-MI-liH"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="5a5-xd-NmI"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="homeView" destination="fqb-sK-MBh" id="bEG-jT-Pdu"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-Ig-OIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="251"/>
-        </scene>
-        <!--TabBarViewController-->
-        <scene sceneID="xRJ-s1-3T8">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fLb-x5-prK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController storyboardIdentifier="TabBarViewController" title="TabBarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5jL-8N-pK5" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4lU-ga-3Xi">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="fmc-X8-30b" kind="relationship" relationship="viewControllers" id="BNR-2T-9nR"/>
-                    </connections>
-                </tabBarController>
-            </objects>
-            <point key="canvasLocation" x="225" y="251"/>
+            <point key="canvasLocation" x="564" y="253.2233883058471"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6Ai-Rt-iTw">
@@ -406,6 +391,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CDx-W1-k7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2130" y="-495"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="25J-CC-c2O">
+            <objects>
+                <navigationController id="c7p-45-vgK" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SV4-x8-p9S">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="fmc-X8-30b" kind="relationship" relationship="rootViewController" id="Tro-Ng-sPt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGQ-H2-u1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1348" y="240"/>
         </scene>
     </scenes>
     <resources>
