@@ -17,6 +17,10 @@ class HomeView: UIView {
     @IBOutlet weak var invoiceAmount: UILabel!
     @IBOutlet weak var imagesCard: UIImageView!
     
+    @IBOutlet weak var expireDateView: UIView!
+    @IBOutlet weak var limitAvailableView: UIView!
+    @IBOutlet weak var invoiceAmountView: UIView!
+    
     func setup ( user: User, cardNumber: Int) {
         dueDate.text = user.cards[cardNumber].dueDate
         limitAvailable.text = user.cards[cardNumber].limitAvailable
@@ -31,6 +35,9 @@ class HomeView: UIView {
         default:
             imagesCard.image = UIImage.init(named: "vermelho")
         }
+        expireDateView.dropShadow(true)
+        limitAvailableView.dropShadow(true)
+        invoiceAmountView.dropShadow(true)
         
     }
 //    enum setCard {

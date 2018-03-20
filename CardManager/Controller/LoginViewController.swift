@@ -29,6 +29,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         loadingIndicator.hidesWhenStopped = true
         self.navigationController?.isNavigationBarHidden = true
+        emailTextfield.becomeFirstResponder()
     }
     
     @IBAction func botaoEntrar(_ sender: Any) {
@@ -52,8 +53,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.loadingIndicator.stopAnimating()
                     let storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                    homeViewController.user = user
+                   homeViewController.user = user
                     self.present(homeViewController, animated: true, completion: nil)
+                    
                 })
             }
         }

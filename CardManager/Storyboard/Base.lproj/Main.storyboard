@@ -99,6 +99,48 @@
             </objects>
             <point key="canvasLocation" x="1127" y="-495"/>
         </scene>
+        <!--Home Navigation View Controller-->
+        <scene sceneID="Uiw-8n-pSq">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNavigationViewController" id="9LK-wD-HyA" customClass="HomeNavigationViewController" customModule="CardManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0IJ-oN-nlm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="fmc-X8-30b" kind="relationship" relationship="rootViewController" id="1R5-le-Len"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jo1-ec-awS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-255" y="253"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="sL5-Iw-FGb">
+            <objects>
+                <tableViewController id="Q4w-om-fay" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Root View Controller" id="8zW-Pc-lbf"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SRE-pa-8tn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57" y="911"/>
+        </scene>
+        <!--Side Menu Navigation Controller-->
+        <scene sceneID="CWW-Ed-NNw">
+            <objects>
+                <navigationController storyboardIdentifier="SideMenuNavigationController" id="3q8-uR-36V" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bX3-EW-jic">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Q4w-om-fay" kind="relationship" relationship="rootViewController" id="toW-xf-YaD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOL-d8-c0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-897" y="911"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="nh8-hx-sVG">
             <objects>
@@ -240,16 +282,23 @@
                         <viewLayoutGuide key="safeArea" id="Mel-XT-6mf"/>
                         <connections>
                             <outlet property="dueDate" destination="MEN-5k-ol9" id="OxZ-kd-9sN"/>
+                            <outlet property="expireDateView" destination="H2d-RS-UDn" id="jBe-9I-3pm"/>
                             <outlet property="imagesCard" destination="j5O-sR-uKg" id="mRk-QN-fPH"/>
                             <outlet property="invoiceAmount" destination="Kaa-nv-o71" id="XLY-tK-AdS"/>
+                            <outlet property="invoiceAmountView" destination="bGE-dg-9Oo" id="oMu-Pr-6RS"/>
                             <outlet property="limitAvailable" destination="3om-Qe-hsT" id="SdH-ek-GRd"/>
+                            <outlet property="limitAvailableView" destination="Kg9-4n-HkV" id="uf1-Mw-5rB"/>
                         </connections>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="5a5-xd-NmI"/>
+                    <navigationItem key="navigationItem" id="5a5-xd-NmI">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="hamburger" id="lM2-lT-NQT">
+                            <color key="tintColor" red="0.9850124716758728" green="0.57604426145553589" blue="0.0016245091101154685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="homeView" destination="fqb-sK-MBh" id="bEG-jT-Pdu"/>
+                        <outlet property="homeView" destination="fqb-sK-MBh" id="s8V-7P-DKz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gzd-Ig-OIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -392,29 +441,11 @@
             </objects>
             <point key="canvasLocation" x="2130" y="-495"/>
         </scene>
-        <!--Side Menu Navigation Controller-->
-        <scene sceneID="25J-CC-c2O">
-            <objects>
-                <navigationController id="c7p-45-vgK" customClass="UISideMenuNavigationController" customModule="SideMenu" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SV4-x8-p9S">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                    <connections>
-                        <segue destination="fmc-X8-30b" kind="relationship" relationship="rootViewController" id="Tro-Ng-sPt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yGQ-H2-u1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1348" y="240"/>
-        </scene>
     </scenes>
     <resources>
         <image name="LoginImage" width="375" height="667"/>
         <image name="Uncheck" width="24" height="24"/>
+        <image name="hamburger" width="50" height="50"/>
         <image name="imageView:4r6-yc-36t:image" width="20" height="24">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGVVZYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEgcI
