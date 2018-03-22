@@ -20,6 +20,15 @@ class HomeViewController: UIViewController {
         }
     }
     
+    @IBAction func homeMenuButton(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard (name: "Main", bundle: nil)
+        let menuViewController = storyboard.instantiateViewController(withIdentifier: "SideMenuNavigationController") as! UISideMenuNavigationControler
+        menuViewController.user = user
+        self.present(menuViewController, animated: true)
+        
+    }
+    
+    
     func cardDefault () -> Int {
         let defaults = UserDefaults.standard
         return defaults.integer(forKey: "cardDefault")

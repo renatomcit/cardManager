@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		37D07AC9205FF9BC001416F5 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07AC8205FF9BC001416F5 /* StringExtensions.swift */; };
-		37D07ACD20613372001416F5 /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07ACC20613372001416F5 /* UISideMenuNavigationController.swift */; };
+		37D07ACD20613372001416F5 /* UISideMenuNavigationControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07ACC20613372001416F5 /* UISideMenuNavigationControler.swift */; };
 		37D07ACF20614382001416F5 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07ACE20614382001416F5 /* UIColorExtensions.swift */; };
-		37D07AD120614DC6001416F5 /* HomeNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07AD020614DC6001416F5 /* HomeNavigationViewController.swift */; };
 		37D07AD320615319001416F5 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07AD220615319001416F5 /* UIViewExtensions.swift */; };
+		37D07AD62061764A001416F5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07AD52061764A001416F5 /* MenuViewController.swift */; };
+		37D07AD82061818E001416F5 /* UIImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07AD72061818E001416F5 /* UIImageViewExtensions.swift */; };
+		37D07ADA20618207001416F5 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07AD920618207001416F5 /* MenuView.swift */; };
+		37D07ADE20629FE9001416F5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07ADD20629FE9001416F5 /* AboutViewController.swift */; };
+		37D07AE02063D710001416F5 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D07ADF2063D710001416F5 /* AboutView.swift */; };
 		4FA81157204ED4DC004DC259 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81156204ED4DC004DC259 /* RegisterView.swift */; };
 		4FA8115A204ED536004DC259 /* UITextFieldExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */; };
 		4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA8115B204ED65C004DC259 /* RegisterViewController.swift */; };
@@ -58,10 +62,14 @@
 
 /* Begin PBXFileReference section */
 		37D07AC8205FF9BC001416F5 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
-		37D07ACC20613372001416F5 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISideMenuNavigationController.swift; sourceTree = "<group>"; };
+		37D07ACC20613372001416F5 /* UISideMenuNavigationControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISideMenuNavigationControler.swift; sourceTree = "<group>"; };
 		37D07ACE20614382001416F5 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
-		37D07AD020614DC6001416F5 /* HomeNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationViewController.swift; sourceTree = "<group>"; };
 		37D07AD220615319001416F5 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		37D07AD52061764A001416F5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		37D07AD72061818E001416F5 /* UIImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtensions.swift; sourceTree = "<group>"; };
+		37D07AD920618207001416F5 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		37D07ADD20629FE9001416F5 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		37D07ADF2063D710001416F5 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		4FA81156204ED4DC004DC259 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		4FA81159204ED536004DC259 /* UITextFieldExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldExtensions.swift; sourceTree = "<group>"; };
 		4FA8115B204ED65C004DC259 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +144,7 @@
 				37D07AC8205FF9BC001416F5 /* StringExtensions.swift */,
 				37D07ACE20614382001416F5 /* UIColorExtensions.swift */,
 				37D07AD220615319001416F5 /* UIViewExtensions.swift */,
+				37D07AD72061818E001416F5 /* UIImageViewExtensions.swift */,
 			);
 			path = "Extensions and Protocols";
 			sourceTree = "<group>";
@@ -240,8 +249,9 @@
 				4FC392E4204DA6D40004A267 /* LoginViewController.swift */,
 				4FA8115B204ED65C004DC259 /* RegisterViewController.swift */,
 				4FF85480205033250092ACB6 /* HomeViewController.swift */,
-				37D07ACC20613372001416F5 /* UISideMenuNavigationController.swift */,
-				37D07AD020614DC6001416F5 /* HomeNavigationViewController.swift */,
+				37D07ACC20613372001416F5 /* UISideMenuNavigationControler.swift */,
+				37D07AD52061764A001416F5 /* MenuViewController.swift */,
+				37D07ADD20629FE9001416F5 /* AboutViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -252,6 +262,8 @@
 				4FB833F2204DB82300BE165E /* LoginView.swift */,
 				4FA81156204ED4DC004DC259 /* RegisterView.swift */,
 				4FF854822050473D0092ACB6 /* HomeView.swift */,
+				37D07AD920618207001416F5 /* MenuView.swift */,
+				37D07ADF2063D710001416F5 /* AboutView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -593,27 +605,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				37D07AD320615319001416F5 /* UIViewExtensions.swift in Sources */,
+				37D07ADA20618207001416F5 /* MenuView.swift in Sources */,
 				4FB45C5820516F390035760B /* RegisterManager.swift in Sources */,
 				4FB833F3204DB82300BE165E /* LoginView.swift in Sources */,
+				37D07AE02063D710001416F5 /* AboutView.swift in Sources */,
 				4FA81157204ED4DC004DC259 /* RegisterView.swift in Sources */,
 				4FA8115E204F0941004DC259 /* LoginManager.swift in Sources */,
 				4FF854832050473D0092ACB6 /* HomeView.swift in Sources */,
 				4FA8115A204ED536004DC259 /* UITextFieldExtensions.swift in Sources */,
-				37D07ACD20613372001416F5 /* UISideMenuNavigationController.swift in Sources */,
+				37D07ACD20613372001416F5 /* UISideMenuNavigationControler.swift in Sources */,
 				4FA8115C204ED65C004DC259 /* RegisterViewController.swift in Sources */,
 				4FF85481205033250092ACB6 /* HomeViewController.swift in Sources */,
 				4FB45C5A205171110035760B /* RegisterBussiness.swift in Sources */,
 				4FA81164204F0A87004DC259 /* LoginBusiness.swift in Sources */,
 				4FF8547B20501EC00092ACB6 /* Response.swift in Sources */,
-				37D07AD120614DC6001416F5 /* HomeNavigationViewController.swift in Sources */,
 				4FC392E5204DA6D40004A267 /* LoginViewController.swift in Sources */,
 				37D07AC9205FF9BC001416F5 /* StringExtensions.swift in Sources */,
 				4FF85475205004D60092ACB6 /* Extract.swift in Sources */,
 				4FF85479205006F40092ACB6 /* User.swift in Sources */,
+				37D07ADE20629FE9001416F5 /* AboutViewController.swift in Sources */,
+				37D07AD82061818E001416F5 /* UIImageViewExtensions.swift in Sources */,
 				4FBC2AF6204F0C6D00C367A8 /* API.swift in Sources */,
 				4FC392E3204DA6D40004A267 /* AppDelegate.swift in Sources */,
 				4FF85477205005860092ACB6 /* Card.swift in Sources */,
 				37D07ACF20614382001416F5 /* UIColorExtensions.swift in Sources */,
+				37D07AD62061764A001416F5 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

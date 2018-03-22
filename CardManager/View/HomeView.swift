@@ -21,6 +21,7 @@ class HomeView: UIView {
     @IBOutlet weak var limitAvailableView: UIView!
     @IBOutlet weak var invoiceAmountView: UIView!
     
+    @IBOutlet weak var homeNavigationBar: UINavigationBar!
     func setup ( user: User, cardNumber: Int) {
         dueDate.text = user.cards[cardNumber].dueDate
         limitAvailable.text = user.cards[cardNumber].limitAvailable
@@ -38,14 +39,9 @@ class HomeView: UIView {
         expireDateView.dropShadow(true)
         limitAvailableView.dropShadow(true)
         invoiceAmountView.dropShadow(true)
-        
+        homeNavigationBar.backgroundColor = UIColor.orangish()
     }
-//    enum setCard {
-//        case purple
-//        case green
-//        case red
-//    }
-    
+
     
     override func awakeFromNib() {
         
